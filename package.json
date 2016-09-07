@@ -4,7 +4,7 @@
   "description": "s3 signature server for linx frontend",
   "main": "index.js",
   "scripts": {
-    "start": "node s3-signature-server.js"
+    "start": "node ."
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
     "aws-sdk": "^2.5.6",
     "body-parser": "^1.15.2",
     "cors": "^2.8.0",
+    "dotenv": "^2.0.0",
     "express": "^4.14.0"
   }
 }

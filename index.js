@@ -2,6 +2,8 @@
 
 const PORT = process.env.PORT || 4005;
 
+require('dotenv').config();
+
 const aws = require('aws-sdk');
 
 const express = require('express');
