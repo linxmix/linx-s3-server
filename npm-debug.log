@@ -1,0 +1,40 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/kane/.nvm/versions/node/v6.2.2/bin/node',
+1 verbose cli   '/Users/kane/.node/bin/npm',
+1 verbose cli   'run',
+1 verbose cli   'deploy' ]
+2 info using npm@2.13.5
+3 info using node@v6.2.2
+4 verbose run-script [ 'predeploy', 'deploy', 'postdeploy' ]
+5 info predeploy linx-s3-server@1.0.0
+6 info deploy linx-s3-server@1.0.0
+7 verbose unsafe-perm in lifecycle true
+8 info linx-s3-server@1.0.0 Failed to exec deploy script
+9 verbose stack Error: linx-s3-server@1.0.0 deploy: `git remote add dokku dokku@linx.dj:s3-server && git push dokku master`
+9 verbose stack Exit status 128
+9 verbose stack     at EventEmitter.<anonymous> (/Users/kane/.node/lib/node_modules/npm/lib/utils/lifecycle.js:214:16)
+9 verbose stack     at emitTwo (events.js:106:13)
+9 verbose stack     at EventEmitter.emit (events.js:191:7)
+9 verbose stack     at ChildProcess.<anonymous> (/Users/kane/.node/lib/node_modules/npm/lib/utils/spawn.js:24:14)
+9 verbose stack     at emitTwo (events.js:106:13)
+9 verbose stack     at ChildProcess.emit (events.js:191:7)
+9 verbose stack     at maybeClose (internal/child_process.js:852:16)
+9 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:215:5)
+10 verbose pkgid linx-s3-server@1.0.0
+11 verbose cwd /Users/kane/projects/linx-s3-server
+12 error Darwin 14.5.0
+13 error argv "/Users/kane/.nvm/versions/node/v6.2.2/bin/node" "/Users/kane/.node/bin/npm" "run" "deploy"
+14 error node v6.2.2
+15 error npm  v2.13.5
+16 error code ELIFECYCLE
+17 error linx-s3-server@1.0.0 deploy: `git remote add dokku dokku@linx.dj:s3-server && git push dokku master`
+17 error Exit status 128
+18 error Failed at the linx-s3-server@1.0.0 deploy script 'git remote add dokku dokku@linx.dj:s3-server && git push dokku master'.
+18 error This is most likely a problem with the linx-s3-server package,
+18 error not with npm itself.
+18 error Tell the author that this fails on your system:
+18 error     git remote add dokku dokku@linx.dj:s3-server && git push dokku master
+18 error You can get their info via:
+18 error     npm owner ls linx-s3-server
+18 error There is likely additional logging output above.
+19 verbose exit [ 1, true ]

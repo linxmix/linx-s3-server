@@ -4,7 +4,8 @@
   "description": "s3 signature server for linx frontend",
   "main": "index.js",
   "scripts": {
-    "start": "node ."
+    "start": "node .",
+    "deploy": "git push dokku master"
   },
   "repository": {
     "type": "git",
