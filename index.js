@@ -9,6 +9,8 @@ const aws = require('aws-sdk');
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const fs = require('fs');
+const youtubedl = require('youtube-dl');
 
 //
 // S3 LOGIC
@@ -68,6 +70,37 @@ app.post('/signed-request', function(req, res) {
     if (err) { console.log('ERROR', err); }
 
     res.send(signedData);
+  });
+});
+
+app.post('/youtube-url', function(req, res) {
+  console.log('POST /youtube-url: ', req.body.file);
+  const body = req.body;
+  const url = body.url;
+
+  const audio = youtubedl('http://www.youtube.com/watch?v=90AiXO1pAiA',
+    ['-x', '--audio-format=mp3']);
+
+  // Will be called when the download starts.
+  audio.on('info', function(info) {
+    console.log('Youtube download started');
+    console.log('filename: ' + info.filename);
+    console.log('size: ' + info.size);
+    console.log('info: ' + info);
+  });
+
+  audio.pipe(fs.createWriteStream('test-file-name'));
+
+  client.upload({
+    Key: 'test-file-name',
+    Body: audio,
+    Bucket: process.env.S3_BUCKET
+  }, function(err, data) {
+    if (err) {
+      console.log('ERROR /youtube-url: ', err);
+    } else {
+      console.log('SUCCESS /youtube-url', data);
+    }
   });
 });
 
