@@ -29,7 +29,7 @@ function getSignedS3Url(fileName, fileType, cb) {
   const params = {
     Bucket: bucket,
     Key: fileName,
-    Expires: 60,
+    Expires: 60 * 15, // 15 minutes
     ContentType: fileType,
     ACL: 'public-read'
   }
